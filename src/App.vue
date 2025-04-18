@@ -1,16 +1,20 @@
-<template>
-  <div id="app">
-    <h1>Welcome to My Vue App</h1>
-    <p>This is a simple Vue.js application.</p>
+<template >
+  <div class="min-h-screen">
+    <Suspense>
+      <template #default>
+        <div>
+          <LoadingSpinner/>
+        </div>
+      </template>
+      <template #fallback>
+        <div class="flex justify-center items-center min-h-screen">
+          <LoadingSpinner/>
+        </div>
+      </template>
+    </Suspense>
   </div>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
+import LoadingSpinner from "./components/LoadingSpinner.vue";
 </script>
-
-<style>
-
-</style>
